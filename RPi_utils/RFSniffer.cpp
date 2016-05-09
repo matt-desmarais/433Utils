@@ -19,7 +19,18 @@ RCSwitch mySwitch;
 
 int main(int argc, char *argv[]) {
 	
-	pinMode (20, OUTPUT);
+
+     // This pin is not the first pin on the RPi GPIO header!
+     // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
+     // for more information.
+     int PIN = 2;
+     
+     if(wiringPiSetup() == -1) {
+       printf("wiringPiSetup failed, exiting...");
+       return 0;
+     }
+     pinMode (3, OUTPUT);
+     	pinMode (20, OUTPUT);
 	pinMode (21, OUTPUT);
 	pinMode (16, OUTPUT);
 	
@@ -31,18 +42,8 @@ int main(int argc, char *argv[]) {
    	delay(5000);
    	digitalWrite (21, LOW);
    	
-   	digitalWrite (16, HIGH);
+   	digitalWrite (20, HIGH);
 	 
-     // This pin is not the first pin on the RPi GPIO header!
-     // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
-     // for more information.
-     int PIN = 2;
-     
-     if(wiringPiSetup() == -1) {
-       printf("wiringPiSetup failed, exiting...");
-       return 0;
-     }
-     pinMode (3, OUTPUT);
      int pulseLength = 0;
      if (argv[1] != NULL) pulseLength = atoi(argv[1]);
 
