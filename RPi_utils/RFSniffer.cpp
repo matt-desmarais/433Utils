@@ -30,19 +30,19 @@ int main(int argc, char *argv[]) {
        return 0;
      }
      pinMode (3, OUTPUT);
-     	pinMode (20, OUTPUT);
-	pinMode (21, OUTPUT);
-	pinMode (16, OUTPUT);
+     	pinMode (28, OUTPUT);
+	pinMode (29, OUTPUT);
+	pinMode (27, OUTPUT);
 	
-	digitalWrite (16, HIGH);
+	digitalWrite (27, HIGH);
    	delay(5000);
-   	digitalWrite (16, LOW);
+   	digitalWrite (27, LOW);
 	
-	digitalWrite (21, HIGH);
+	digitalWrite (29, HIGH);
    	delay(5000);
-   	digitalWrite (21, LOW);
+   	digitalWrite (29, LOW);
    	
-   	digitalWrite (20, HIGH);
+   	digitalWrite (28, HIGH);
 	 
      int pulseLength = 0;
      if (argv[1] != NULL) pulseLength = atoi(argv[1]);
