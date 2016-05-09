@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
        printf("wiringPiSetup failed, exiting...");
        return 0;
      }
-
+     pinMode (3, OUTPUT);
      int pulseLength = 0;
      if (argv[1] != NULL) pulseLength = atoi(argv[1]);
 
@@ -46,7 +46,13 @@ int main(int argc, char *argv[]) {
         if (value == 0) {
           printf("Unknown encoding\n");
         } else {    
-   
+   		if(mySwitch.getReceivedValue() == 11466866)
+   		{
+   			
+   			digitalWrite (3, HIGH);
+   			delay(2000);
+   			digitalWrite (3, LOW);
+   		}
           printf("Received %i\n", mySwitch.getReceivedValue() );
         }
     
@@ -54,6 +60,7 @@ int main(int argc, char *argv[]) {
     
       }
       
+     
   
   }
 
