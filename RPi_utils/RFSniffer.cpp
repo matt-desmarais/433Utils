@@ -18,7 +18,21 @@ RCSwitch mySwitch;
 
 
 int main(int argc, char *argv[]) {
-  
+	
+	pinMode (20, OUTPUT);
+	pinMode (21, OUTPUT);
+	pinMode (16, OUTPUT);
+	
+	digitalWrite (16, HIGH);
+   	delay(5000);
+   	digitalWrite (16, LOW);
+	
+	digitalWrite (21, HIGH);
+   	delay(5000);
+   	digitalWrite (21, LOW);
+   	
+   	digitalWrite (16, HIGH);
+	 
      // This pin is not the first pin on the RPi GPIO header!
      // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
      // for more information.
